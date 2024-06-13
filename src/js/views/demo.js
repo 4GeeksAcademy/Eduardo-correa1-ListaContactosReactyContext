@@ -10,9 +10,9 @@ export const Demo = () => {
 
   return (
     <div className="container">
-		<div className="text-center mt-3">
-		<h1>Add a new contact</h1>
-		</div>
+      <div className="text-center mt-3">
+        <h1>Add a new contact</h1>
+      </div>
       <form className="mt-5">
         <div className="mb-3">
           <label htmlFor="Name" className="form-label">
@@ -23,11 +23,10 @@ export const Demo = () => {
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-			placeholder="Full Name"
+            placeholder="Full Name"
           />
-		  
         </div>
-		<div className="mb-3">
+        <div className="mb-3">
           <label htmlFor="email" className="form-label">
             Email
           </label>
@@ -36,11 +35,10 @@ export const Demo = () => {
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-			placeholder="Enter email"
+            placeholder="Enter email"
           />
-		  
         </div>
-		<div className="mb-3">
+        <div className="mb-3">
           <label htmlFor="Name" className="form-label">
             Phone
           </label>
@@ -49,9 +47,8 @@ export const Demo = () => {
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
-			placeholder="Enter phone"
+            placeholder="Enter phone"
           />
-		  
         </div>
         <div className="mb-3">
           <label htmlFor="exampleInputPassword1" className="form-label">
@@ -61,19 +58,17 @@ export const Demo = () => {
             type="adress"
             className="form-control"
             id="exampleInputPassword1"
-			placeholder="Enter address"
+            placeholder="Enter address"
           />
-        </div>        
+        </div>
         <div className="d-grid gap-2">
           <button className="btn btn-primary" type="button">
             save
-          </button>          
+          </button>
         </div>
       </form>
       <Link to="/">
-	  <div className="form-text mt-2">
-            Or get back to contacts
-          </div>
+        <div className="form-text mt-2">Or get back to contacts</div>
       </Link>
     </div>
   );
