@@ -1,0 +1,15 @@
+.foto{
+    border-radius: 100%;
+    height: 200px;
+    width: 200px;
+}
+
+.container{
+    margin: auto;
+    align-content: center;
+}
+.card{
+    margin: auto;
+    width: 700px;
+    padding: 5px;
+}
