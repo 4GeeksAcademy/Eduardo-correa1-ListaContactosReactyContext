@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 const Card = () => {
   const { store, actions } = useContext(Context);
+
+  
   return (
     <div className="mt-5">
       <div className="card mb-3 position-relative">
@@ -43,7 +45,7 @@ const Card = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
   );
 };
 
