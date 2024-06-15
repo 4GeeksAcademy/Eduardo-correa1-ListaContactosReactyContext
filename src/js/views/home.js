@@ -13,9 +13,9 @@ export const Home = () => {
     actions.fetchContacts();
   }, []);
 
+console.log(store.listContacts)
 
-
-  console.log(store.listContacts)
+  
 
   return (
     <div className="container">

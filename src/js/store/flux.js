@@ -3,9 +3,10 @@ const getState = ({ getStore, getActions, setStore }) => {
     store: {
       image2:
         "https://img.freepik.com/fotos-premium/persona-rostro_650503-1667.jpg",
+      imagemale:"https://st3.depositphotos.com/9058402/15119/v/450/depositphotos_151195856-stock-illustration-pop-art-businessman-talking-on.jpg",
       image:
         "https://media.istockphoto.com/id/1190626181/es/vector/retrato-de-una-chica-de-pelo-corto-androgin-mirando-con-una-mirada-lateral-diversidad-avatar.jpg?s=612x612&w=0&k=20&c=WJGPsDghyxbrq0cU1S0XmRlXCxWiwlo7AY4IMH4jm50=",
-      listContacts: []
+        listContacts: { contacts: [] }
     },
     actions: {
       createUser: () => {
