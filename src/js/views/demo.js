@@ -10,7 +10,7 @@ export const Demo = () => {
     name: "",
     email: "",
     phone: "",
-    address: ""
+    address: "",
   });
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,7 +19,7 @@ export const Demo = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     actions.createContact(formData);
-    navigate("/");    
+    navigate("/");
   };
 
   return (
@@ -38,7 +38,7 @@ export const Demo = () => {
             id="name"
             name="name"
             value={formData.name}
-            onChange={handleChange}            
+            onChange={handleChange}
             placeholder="Full Name"
           />
         </div>
@@ -52,7 +52,7 @@ export const Demo = () => {
             id="email"
             name="email"
             value={formData.email}
-            onChange={handleChange}            
+            onChange={handleChange}
             placeholder="Enter email"
           />
         </div>

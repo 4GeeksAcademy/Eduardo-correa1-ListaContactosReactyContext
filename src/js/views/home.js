@@ -1,9 +1,8 @@
-import React, { Component, useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import Card from "../component/card";
-
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -13,9 +12,7 @@ export const Home = () => {
     actions.fetchContacts();
   }, []);
 
-console.log(store.listContacts)
-
-  
+  console.log(store.listContacts);
 
   return (
     <div className="container">
@@ -28,7 +25,7 @@ console.log(store.listContacts)
           </div>
         </div>
       </nav>
-      <Card />      
+      <Card />
     </div>
   );
 };

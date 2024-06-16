@@ -12,21 +12,23 @@ export const EditContact = () => {
     name: "",
     email: "",
     phone: "",
-    address: ""
+    address: "",
   });
 
   useEffect(() => {
-    const contact = store.listContacts.contacts.find(c => c.id === parseInt(contactId));
+    const contact = store.listContacts.contacts.find(
+      (c) => c.id === parseInt(contactId)
+    );
     if (contact) {
       setFormData(contact);
     }
   }, [contactId, store.listContacts.contacts]);
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     actions.editContact(contactId, formData);
     navigate("/");
