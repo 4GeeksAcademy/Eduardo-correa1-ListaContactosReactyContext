@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       image2:
-        "https://img.freepik.com/fotos-premium/persona-rostro_650503-1667.jpg",
+        "https://img.freepik.com/fotos-premium/momo-assustador_9083-16970.jpg",
       imagemale:
         "https://st3.depositphotos.com/9058402/15119/v/450/depositphotos_151195856-stock-illustration-pop-art-businessman-talking-on.jpg",
       image:
