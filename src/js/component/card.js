@@ -1,19 +1,29 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
 const Card = () => {
-  const { store } = useContext(Context);
+  const { store, actions } = useContext(Context);
 
-  
+  useEffect(() => {
+    actions.fetchContacts();
+  }, []);
+
+  const handleDelete = (contactId) => {
+    actions.deleteContact(contactId);
+  };
+
   return (
     <div className="mt-5">
       {store.listContacts.contacts && store.listContacts.contacts.length > 0 ? (
         store.listContacts.contacts.map((contact, index) => (
           <div key={index} className="card mb-3 position-relative">
             <div className="position-absolute top-0 end-0 p-3">
-              <i className="fa-solid fa-pencil m-3"></i>
-              <i className="fa-solid fa-trash-can m-3"></i>
+              <Link to={`/edit/${contact.id}`}>
+                <i className="fa-solid fa-pencil m-3"></i>
+              </Link>
+              <i className="fa-solid fa-trash-can m-3" onClick={() => handleDelete(contact.id)} 
+                style={{ cursor: "pointer" }}></i>
             </div>
             <div className="row g-0">
               <div className="col-md-4">

@@ -36,12 +36,7 @@ const getState = ({ getStore, getActions, setStore }) => {
               "Content-Type": "application/json",
               accept: "application/json"
             },
-            body: JSON.stringify({
-              name: contact.name,
-              phone: contact.phone,
-              email: contact.email,
-              address: contact.address
-            })
+            body: JSON.stringify(contact)
           }
         )
           .then(response => response.json())
@@ -61,6 +56,47 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then(response => response.json())
           .then(data => {
             setStore({ listContacts: data });
+          })
+          .catch(error => {
+            console.error("Error:", error);
+          });
+      },
+      editContact: (contactId, updatedContact) => {
+        const store = getStore();
+        fetch(`https://playground.4geeks.com/contact/agendas/Edu/contacts/${contactId}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            accept: "application/json"
+          },
+          body: JSON.stringify(updatedContact)
+        })
+          .then(response => response.json())
+          .then(updatedContact => {
+            const updatedContacts = store.listContacts.contacts.map(contact =>
+              contact.id === contactId ? updatedContact : contact
+            );
+            setStore({ listContacts: { contacts: updatedContacts } });
+          })
+          .catch(error => {
+            console.error("Error:", error);
+          });
+      },
+      deleteContact: contactId => {
+        const store = getStore();
+        fetch(`https://playground.4geeks.com/contact/agendas/Edu/contacts/${contactId}`, {
+          method: "DELETE",
+          headers: {
+            accept: "application/json"
+          }
+        })
+          .then(response => {
+            if (response.ok) {
+              const updatedContacts = store.listContacts.contacts.filter(contact => contact.id !== contactId);
+              setStore({ listContacts: { contacts: updatedContacts } });
+            } else {
+              console.error("Error deleting contact:", response.statusText);
+            }
           })
           .catch(error => {
             console.error("Error:", error);
